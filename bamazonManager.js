@@ -36,15 +36,15 @@ var manager = function () {
             viewProducts();
             break;
            
-            case "View Products For Sale":
+            case "View Low Inventory":
             viewLowInventory();
             break;
            
-            case "View Products For Sale":
+            case "Add to Inventory":
             addToInventory();
             break;
            
-            case "View Products For Sale":
+            case "Add New Product":
             addNewProduct();
             break;
 
@@ -56,14 +56,14 @@ var manager = function () {
 };
 
 function viewProducts() {
-    connection.query("SELECT * FROM products", function(err, res){
+    connection.query("SELECT * FROM products", function(err, res) {
         if (err) throw err;
         
         var table = new Table({
             head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity"],
-            colWidths: [15, 100, 30, 15, 20],
+            colWidths: [20, 100, 30, 20, 20],
             colAlign: "center",
-            styel: {
+            style: {
                 head: ["aqua"],
                 compact: true
             }
@@ -85,7 +85,32 @@ function viewProducts() {
 };
 
 function viewLowInventory() {
+    connection.query("SELECT * FROM products WHERE stock_quantity < 5", function(err, res) {
+        if (err) throw err;
 
+        var table = new Table({
+            head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity"],
+            colWidths: [20, 100, 30, 20, 20],
+            colAlign: "center",
+            style: {
+                head: ["aqua"],
+                compact: true
+            }
+        });
+
+        for (var i = 0; i < res.length; i++){
+            table.push([
+                res[i].id,
+                res[i].product_name,
+                res[i].department_name,
+                res[i].price,
+                res[i].stock_quantity,
+            ])
+        };
+
+        console.log(table.toString());
+        console.log("")
+    })
 };
 
 function addToInventory() {

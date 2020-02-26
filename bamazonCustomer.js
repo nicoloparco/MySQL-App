@@ -27,8 +27,8 @@ function loadDatabase() {
 
 
         var table = new Table({
-            head: ["Product Id", "Product Name", "Department Name", "Price", "Quantity"],
-            colWidths: [20, 100, 30, 10, 10],
+            head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity"],
+            colWidths: [20, 100, 30, 20, 20],
             colAligns: ["center"],
             style: {
                 head: ["aqua"],
