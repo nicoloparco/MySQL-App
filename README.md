@@ -7,6 +7,7 @@ Customer Level:
 To run the customer level through node just run node bamazonCusomer.js in your CLI
 This level allows the user to act as a customer to select an item and "purchase" a quantity of it
 Doing so will affect the quantity of the item in the database and then a table representing the data will be displayed in the CLI
+There is also a product sales column that is updated every time a product is purchased
 
 Manager Level:
 To run the manager level through node just run node bamazonManager.js in your CLI
