@@ -81,6 +81,7 @@ function viewProducts() {
 
         console.log(table.toString());
         console.log("")
+        connection.end
     })
 };
 
@@ -110,12 +111,29 @@ function viewLowInventory() {
 
         console.log(table.toString());
         console.log("")
+        connection.end
     })
 };
 
 function addToInventory() {
+    inquirer.prompt({
+        type: "input",
+        message: "Please Enter the Name of the Product",
+        name: "product"
+    }).then(() => {
+        inquirer.prompt({
+            type: "input",
+            message: 'Please Enter the New Quantity',
+            name: "quantity"
+        })
+    }).then(function(answers) {
+        console.log(answers)
+        
+
+        // connection.query(`UPDATE products SET stock_quantity=${}`)
+    })
+}
     
-};
 
 function addNewProduct() {
     inquirer.prompt({
@@ -153,6 +171,7 @@ function addNewProduct() {
     
             console.log(table.toString());
             console.log("")
+            connection.end
             })
         )
     })
