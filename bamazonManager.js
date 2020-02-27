@@ -140,7 +140,7 @@ function addToInventory() {
 function addNewProduct() {
     inquirer.prompt({
         type: "input",
-        message: 'Please Enter Information About Product ("name of product", "department of product", "price", "quantity")',
+        message: 'Please Enter Information About Product As Follows ("name of product", "department of product", "price", "quantity")',
         name: "product"
     }).then(function(answer){ 
         
