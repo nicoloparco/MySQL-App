@@ -60,8 +60,8 @@ function viewProducts() {
         if (err) throw err;
         
         var table = new Table({
-            head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity"],
-            colWidths: [20, 100, 30, 20, 20],
+            head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity", "Product Sales"],
+            colWidths: [15, 100, 30, 15, 15, 15],
             colAlign: "center",
             style: {
                 head: ["aqua"],
@@ -76,6 +76,7 @@ function viewProducts() {
                 res[i].department_name,
                 res[i].price,
                 res[i].stock_quantity,
+                response[i].product_sales
             ])
         };
 
@@ -90,8 +91,8 @@ function viewLowInventory() {
         if (err) throw err;
 
         var table = new Table({
-            head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity"],
-            colWidths: [20, 100, 30, 20, 20],
+            head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity", "Product Sales"],
+            colWidths: [15, 100, 30, 15, 15, 15],
             colAlign: "center",
             style: {
                 head: ["aqua"],
@@ -106,6 +107,7 @@ function viewLowInventory() {
                 res[i].department_name,
                 res[i].price,
                 res[i].stock_quantity,
+                response[i].product_sales
             ])
         };
 
@@ -150,8 +152,8 @@ function addNewProduct() {
             if (err) throw err;
             
             var table = new Table({
-                head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity"],
-                colWidths: [20, 100, 30, 20, 20],
+                head: ["Product Id", "Product Name", "Department Name", "Product Price", "Product Quantity", "Product Sales"],
+                colWidths: [15, 100, 30, 15, 15, 15],
                 colAlign: "center",
                 style: {
                     head: ["aqua"],
@@ -166,6 +168,7 @@ function addNewProduct() {
                     res[i].department_name,
                     res[i].price,
                     res[i].stock_quantity,
+                    response[i].product_sales
                 ])
             };
     

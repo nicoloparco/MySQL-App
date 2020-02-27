@@ -4,12 +4,13 @@ CREATE DATABASE bamazonDB;
 USE bamazonDB;
 
 CREATE TABLE products(
-    id INT NOT NULL AUTO_INCREMENT,
+    item_id INT NOT NULL AUTO_INCREMENT,
     product_name VARCHAR(100) NULL,
     department_name VARCHAR(45) NULL,
     price INT NULL,
     stock_quantity INT NULL,
-    PRIMARY KEY (id)
+    product_sales INT NULL,
+    PRIMARY KEY (item_id)
 );
 
 
@@ -42,3 +43,10 @@ VALUES ("Instant Pot DUONOVA10 Duo Nova 10 Quart Pressure Cooker, QT, Stainless 
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("YETI Rambler 20 oz Stainless Steel Vacuum Insulated Tumbler w/MagSlider Lid", "Sports & Fitness", 24.99, 100);
+
+CREATE TABLE departments(
+    department_id INT NOT NULL AUTO_INCREMENT,
+    department_name VARCHAR(45) NULL,
+    over_head_costs INT NULL,
+    PRIMARY KEY(department_id)
+);
